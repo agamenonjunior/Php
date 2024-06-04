@@ -28,6 +28,7 @@ class Produto
 
     /**
      * Set the value of id
+     * @param int $id
      */
     public function setId($id): self
     {
@@ -38,6 +39,8 @@ class Produto
 
     /**
      * Get the value of Nome
+     * @param String $nome
+     * @return String
      */
     public function getNome()
     {
@@ -46,6 +49,7 @@ class Produto
 
     /**
      * Set the value of Nome
+     * @param String $nome
      */
     public function setNome($Nome): self
     {
@@ -56,14 +60,17 @@ class Produto
 
     /**
      * Get the value of valor
+     * @param float $valor
+     * @return float
      */
-    public function getValor()
+    public function getValor() : float
     {
         return $this->valor;
     }
 
     /**
      * Set the value of valor
+     * @param float $valor
      */
     public function setValor($valor): self
     {
@@ -74,6 +81,8 @@ class Produto
 
     /**
      * Get the value of imagem
+     * @param String $img
+     * @return String
      */
     public function getImagem()
     {
@@ -82,6 +91,7 @@ class Produto
 
     /**
      * Set the value of imagem
+     * @param String $img
      */
     public function setImagem($imagem): self
     {
@@ -92,6 +102,8 @@ class Produto
 
     /**
      * Get the value of quantidade
+     * @param int $quantidade
+     * @return int $quantidade
      */
     public function getQuantidade()
     {
@@ -100,8 +112,9 @@ class Produto
 
     /**
      * Set the value of quantidade
+     * @param int $quantidade
      */
-    public function setQuantidade($quantidade): self
+    public function setQuantidade($quantidade)
     {
         $this->quantidade = $quantidade;
 
@@ -110,6 +123,8 @@ class Produto
 
     /**
      * Get the value of categoria
+     * @param String $Categoria
+     * @return String $Categoria
      */
     public function getCategoria()
     {
@@ -118,6 +133,7 @@ class Produto
 
     /**
      * Set the value of categoria
+     * @param String $Categoria
      */
     public function setCategoria($categoria): self
     {
