@@ -5,11 +5,13 @@ class Upload{
  *  Classe Upload 
  */
 
- public function arquivo(){
-
+ private $documento;
+ 
+ public function arquivo($documento){
+    
  }
 
- public function midia(){
+ public function midia($documento){
     
  }
 
