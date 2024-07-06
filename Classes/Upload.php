@@ -2,7 +2,7 @@
 
 class Upload{
 /**
- *  Classe Upload 
+ *  Classe realiza Upload 
  */
 
  private $id;
