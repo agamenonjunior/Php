@@ -1,5 +1,7 @@
 <?php
 
+require_once('Conexao.php');
+
 class Contato
 {
 
@@ -87,4 +89,22 @@ class Contato
 
         return $this;
     }
+
+    /**
+     * Adicionar ao banco de dados
+     *
+     *  */
+    public function Adicionar(){
+        $conn = new Conexao();
+        $conn->conectar();
+        $sql = "INSERT INTO contatos (remetente,destinatario, assunto, mensagem) VALUES (:remetente, :destinatario, :assunto, :mensagem)";
+        $sql = $this->$conn->prepare($sql);
+        $sql->bindValue(':remetente',$this->remetente);
+        $sql->bindValue(':destinatario',$this->destinatario);
+        $sql->bindValue(':assunto',$this->assunto);
+        $sql->bindValue(':mensagem',$this->mensagem);
+        $sql->execute();
+
+    }
+
 }
