@@ -91,7 +91,7 @@ class Contato
     }
 
     /**
-     * Adicionar ao banco de dados
+     * Adicionar Contato ao banco de dados
      *
      *  */
     public function Adicionar(){
@@ -106,5 +106,19 @@ class Contato
         $sql->execute();
 
     }
+    public function ListarAll(){
+        $conn = new Conexao();
+        $conn->conectar();
+        $sql = "SELECT * FROM contatos";
+        $sql = $this->$conn->prepare();
+        $sql->execute();
+
+       while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
+        # code...
+        echo "Remetente:{$linha['remetente']} - Mensagem :{$linha['mensagem']}";
+       }
+
+    }
+
 
 }
