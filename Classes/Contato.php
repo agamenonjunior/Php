@@ -115,7 +115,7 @@ class Contato
 
        while ($linha = $sql->fetch(PDO::FETCH_ASSOC)) {
         # code...
-        echo "Remetente:{$linha['remetente']} - Mensagem :{$linha['mensagem']}";
+        echo "Remetente:{$linha['remetente']} - Destinatário :{$linha['destinatario']} - Assunto :{$linha['assunto']} - Mensagem :{$linha['mensagem']}";
        }
 
     }
