@@ -119,6 +119,15 @@ class Contato
        }
 
     }
+    public function Delete($id){
+        $conn = new Conexao();
+        $conn->conectar();
+        $sql = "DELETE * FROM contatos WHERE id = :id";
+        $sql = $this->$conn->prepare($sql);
+        $sql->bindValue(':id',$id);
+        $sql->execute();
+
+    }
 
 
 }
