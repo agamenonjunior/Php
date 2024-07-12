@@ -91,9 +91,12 @@ class Contato
     }
 
     /**
-     * Adicionar Contato ao banco de dados
+     * Adicionar function
      *
-     *  */
+     * Realiza o cadastro de um registro no Banco de dados
+     * 
+     * @return void
+     */
     public function Adicionar(){
         $conn = new Conexao();
         $conn->conectar();
