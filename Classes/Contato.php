@@ -106,6 +106,13 @@ class Contato
         $sql->execute();
 
     }
+    /**
+     * ListarAll function
+     *
+     * Realiza uma consulta ao banco de dados e retorna todos os registros válidos
+     * 
+     * @return void
+     */
     public function ListarAll(){
         $conn = new Conexao();
         $conn->conectar();
@@ -119,6 +126,14 @@ class Contato
        }
 
     }
+    /**
+     * Delete function
+     *
+     * Realiza a exclusão de um registro no banco de dados
+     * 
+     * @param [type] $id
+     * @return void
+     */
     public function Delete($id){
         $conn = new Conexao();
         $conn->conectar();
