@@ -25,3 +25,9 @@ function Diferenca_entre_datas($data1, $data2)
     return $intervalo->format('%a dia(s)');
 }
 
+function Contador_de_caracteres($palavra){
+    return strlen($palavra);
+}
+
+
+
