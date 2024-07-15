@@ -147,5 +147,17 @@ class Contato
 
     }
 
+    public function Update($id, $mensagem){
+        $conn = new Conexao();
+        $conn->conectar();
+        $sql = "UPDATE contatos SET mensagem = :mensagem WHERE id = :id";
+        $sql = $this->$conn->prepare($sql);
+        $sql->bindValue(':id',$id);
+        $sql->bindValue(':mensagem',$mensagem);
+        $sql->execute();
+
+    }
+
+
 
 }
