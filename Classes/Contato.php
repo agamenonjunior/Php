@@ -148,7 +148,7 @@ class Contato
     }
     /**
      * Update function
-     *
+     * Realiza a atualização dos dados no banco de dados
      * @param [Int] $id
      * @param [String] $mensagem
      * @return void
