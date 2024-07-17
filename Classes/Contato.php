@@ -146,7 +146,13 @@ class Contato
         $sql->execute();
 
     }
-
+    /**
+     * Update function
+     *
+     * @param [Int] $id
+     * @param [String] $mensagem
+     * @return void
+     */
     public function Update($id, $mensagem){
         $conn = new Conexao();
         $conn->conectar();
