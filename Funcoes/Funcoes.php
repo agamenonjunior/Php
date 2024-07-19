@@ -37,6 +37,7 @@ function Contador_de_caracteres($palavra){
 
 
 function array_generico($dados){
+    $array_generico = array();
     $chaves  = array_keys($dados);
     foreach ($dados as $key => $value) {
         # realiza o implode nos valores do array
@@ -48,11 +49,20 @@ function array_generico($dados){
         $campos = implode(", ",$chaves);
     }
     
-    echo "</br> Campos: $campos";
-    echo "</br> valores: $valores";
+        $array_generico['campos'] = $campos;
+        $array_generico['valores'] = $valores;
+        return $array_generico;
+        
+        #Execução: REMOVER COMENTARIO E EXECUTAR FORA DA FUNCAO
+/*
+    $dado = array("size" => "XL", "color" => "gold");
+    $campos = array_generico($dado);
+    echo $campos['campos'];
+    $valores = array_generico($dado);
+    echo $campos['valores'];
+*/
     
-    #Execução:
-    #$dado = array("size" => "XL", "color" => "gold");
-    #array_generico($dado);
 }
+
+
 

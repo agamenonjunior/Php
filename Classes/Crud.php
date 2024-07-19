@@ -26,18 +26,35 @@ class Crud
     }
 
     public function Adicionar($email,$tabela,$dados){
-
-        $campos  = array_keys($dados);
-        $valores = array_values($dados);
+        $dado = $this->array_generico($dados);
 
         if($this->VerificaEmail($email)== false){
-            $sql = "INSERT INTO {$tabela} ($campos) VALUES ($valores)";
+            $sql = "INSERT INTO {$tabela} ({$dado['campo']}) VALUES ({$dado['valores']})";
         }else{
-
+            return false;
         }
     }
 
     public function VerificaEmail($email){
+        
+    }
+
+    public function array_generico($dados){
+        $array_generico = array();
+
+        $chaves  = array_keys($dados);
+        foreach ($dados as $key => $value) {
+            # realiza o implode nos valores do array
+            $valores = implode(", ",$dados);
+        }
+    
+        foreach ($chaves as $key => $value) {
+            # realiza o implode nas chaves do array
+            $campos = implode(", ",$chaves);
+        }
+        $array_generico['campos'] = $campos;
+        $array_generico['valores'] = $valores;
+        return $array_generico;
         
     }
 
