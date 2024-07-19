@@ -20,6 +20,8 @@ class Crud
         try {
             $this->conexao = new PDO("mysql:host=$this->host,dbname=$this->db", $this->user, $this->pass);
             $this->conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $this->conexao;
+
         } catch (PDOException  $error) {
             echo 'ERROR: ' . $error->getMessage();
         }
@@ -30,6 +32,9 @@ class Crud
 
         if($this->VerificaEmail($email)== false){
             $sql = "INSERT INTO {$tabela} ({$dado['campo']}) VALUES ({$dado['valores']})";
+            $pdo = $this->Conect();
+            $stmt = $pdo->prepare($sql);
+            $pdo->exec($stmt); 
         }else{
             return false;
         }
