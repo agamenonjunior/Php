@@ -36,6 +36,12 @@ class Crud
     }
 
     public function VerificaEmail($email){
+        /**
+         * VerificaEmail function
+         * Verifica se o e-mail já está cadastrado no Banco de Dados
+         * @param [string] $dados
+         * @return bool
+         */
         
     }
 
