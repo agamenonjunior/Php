@@ -34,3 +34,25 @@ function Diferenca_entre_datas($data1, $data2)
 function Contador_de_caracteres($palavra){
     return strlen($palavra);
 }
+
+
+function array_generico($dados){
+    $chaves  = array_keys($dados);
+    foreach ($dados as $key => $value) {
+        # realiza o implode nos valores do array
+        $valores = implode(", ",$dados);
+    }
+
+    foreach ($chaves as $key => $value) {
+        # realiza o implode nas chaves do array
+        $campos = implode(", ",$chaves);
+    }
+    
+    echo "</br> Campos: $campos";
+    echo "</br> valores: $valores";
+    
+    #Execução:
+    #$dado = array("size" => "XL", "color" => "gold");
+    #array_generico($dado);
+}
+
