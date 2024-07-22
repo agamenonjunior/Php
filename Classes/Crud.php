@@ -27,6 +27,9 @@ class Crud
     }
 
     public function Adicionar($email, $tabela, $dados)
+    /**
+     * Realiza Insert no Banco de dados
+     */
     {
         $dado = $this->array_generico($dados);
         $pdo = $this->Conect();
