@@ -56,6 +56,15 @@ class Crud
          * @param [string] $dados
          * @return bool
          */
+        $pdo = $this->Conect();
+        $sql = $pdo->prepare("SELECT * FROM usuarios WHERE email=:email");
+        $sql->bindParam(":email",$email);
+        $sql->execute();
+        if($sql->rowCount() > 0 ){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public function array_generico($dados)
