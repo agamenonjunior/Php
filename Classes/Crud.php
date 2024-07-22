@@ -15,6 +15,9 @@ class Crud
 
 
     public function Conect()
+    /**
+     * Realiza a conexão com o banco de dados
+     */
     {
 
         try {
@@ -73,5 +76,11 @@ class Crud
         $array_generico['campos'] = $campos;
         $array_generico['valores'] = $valores;
         return $array_generico;
+    }
+    public function Update($id,$dados){
+
+    }
+    public function Delete($id){
+
     }
 }
