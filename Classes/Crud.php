@@ -90,6 +90,10 @@ class Crud
 
     }
     public function Delete($id){
+        $pdo = $this->Conect();
+        $sql = $pdo->prepare("DELETE FROM usuarios WHERE id=:id");
+        $sql->bindParam(":id",$id);
+        $sql->execute();
 
     }
 }
