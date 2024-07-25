@@ -101,6 +101,10 @@ class Crud
         $sql->execute();
     }
     public function Delete($id){
+        /**
+         * Exclui um usuario da tabela
+         * @param int $id 
+         */
         $pdo = $this->Conect();
         $sql = $pdo->prepare("DELETE FROM usuarios WHERE id=:id");
         $sql->bindParam(":id",$id);
