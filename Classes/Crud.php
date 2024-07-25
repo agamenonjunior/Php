@@ -87,7 +87,11 @@ class Crud
         return $array_generico;
     }
     public function Update($id,$dados){
-
+        $pdo = $this->Conect();
+        $sql = $pdo->prepare("UPDATE usuarios SET nome =:nome WHERE id=:id");
+        $sql->bindParam(":id",$id);
+        $sql->bindParam(":nome",$dados['nome']);
+        $sql->execute();
     }
     public function Delete($id){
         $pdo = $this->Conect();
