@@ -87,6 +87,13 @@ class Crud
         return $array_generico;
     }
     public function Update($id,$dados){
+
+        /**
+         * Realiza o Update na tabela usuarios
+         * @param int $id
+         * @param array $dados
+         */
+
         $pdo = $this->Conect();
         $sql = $pdo->prepare("UPDATE usuarios SET nome =:nome WHERE id=:id");
         $sql->bindParam(":id",$id);
