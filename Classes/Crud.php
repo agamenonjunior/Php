@@ -68,6 +68,11 @@ class Crud
     }
 
     public function array_generico($dados)
+
+    /**
+     * Retornar um array genérico contendo chaves e valores
+     */
+
     {
         $array_generico = array();
 
