@@ -1,12 +1,10 @@
 <?php
 
-namespace Conexao;
-
 class Conexao
 {
     private $usuario = 'root';
     private $senha = '';
-    private $banco = '';
+    private $banco = 'crud';
 
     public function conectar()
     {
@@ -15,6 +13,7 @@ class Conexao
             //realiza a conexao...
             $conn = new PDO("mysql:host=localhost;dbname=$this->banco", $this->usuario, $this->senha);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $conn;
         } catch (PDOException  $error) {
             echo 'ERROR: ' . $error->getMessage();
         }

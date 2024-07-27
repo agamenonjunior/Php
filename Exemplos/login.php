@@ -1,7 +1,9 @@
 <?php
 
-$conexao = new Conexao;
-$conexao->conectar();
+require_once("../Classes/Conexao.php");
+
+$conexao = new Conexao();
+$conexao = $conexao->conectar();
 
 
 if (isset($_POST['entrar']) && !empty($_POST['email']) && !empty($_POST['senha'])) {
@@ -12,7 +14,7 @@ if (isset($_POST['entrar']) && !empty($_POST['email']) && !empty($_POST['senha']
     
     #realiza conexao com db e verifica registro
 
-    $pdo = $conexao->prepare("SELECT * FROM usuarios WHERE email =:email AND senha =:senha");
+    $sql = $conexao->prepare("SELECT * FROM usuarios WHERE email =:email AND senha =:senha");
     $sql->bindParam(":email",$email);
     $sql->bindParam(":senha",$senha);
     $sql->execute();
@@ -24,7 +26,7 @@ if (isset($_POST['entrar']) && !empty($_POST['email']) && !empty($_POST['senha']
         $_SESSION['senha'] = $dado['senha'];
         header("Location:dashboard.php");
     }else{
-
+        echo "Error";
     }
 
     
@@ -35,8 +37,8 @@ if (isset($_POST['entrar']) && !empty($_POST['email']) && !empty($_POST['senha']
 
 <form action="" method="post">
 
-    <input type="text" name="email" id="email" placeholder="Usuario">
-    <input type="password" name="senha" id="senha">
+    <input type="text" name="email" id="email" placeholder="Informe seu E-mail">
+    <input type="password" name="senha" id="senha" placeholder="informe sua Senha">
     <input type="submit" value="Entrar" name="entrar">
 
 </form>
