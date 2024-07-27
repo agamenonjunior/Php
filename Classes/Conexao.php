@@ -1,4 +1,7 @@
 <?php
+
+namespace Conexao;
+
 class Conexao
 {
     private $usuario = 'root';
