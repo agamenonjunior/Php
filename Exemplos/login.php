@@ -26,7 +26,7 @@ if (isset($_POST['entrar']) && !empty($_POST['email']) && !empty($_POST['senha']
         $_SESSION['senha'] = $dado['senha'];
         header("Location:dashboard.php");
     }else{
-        echo "Error";
+        echo "Error: E-mail ou Senha não existe no sistema";
     }
 
     
