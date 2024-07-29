@@ -31,38 +31,47 @@ function Diferenca_entre_datas($data1, $data2)
  * @param [string] $palavra
  * @return void
  */
-function Contador_de_caracteres($palavra){
+function Contador_de_caracteres($palavra)
+{
     return strlen($palavra);
 }
 
 
-function array_generico($dados){
+function array_generico($dados)
+{
     $array_generico = array();
     $chaves  = array_keys($dados);
     foreach ($dados as $key => $value) {
         # realiza o implode nos valores do array
-        $valores = implode(", ",$dados);
+        $valores = implode(", ", $dados);
     }
 
     foreach ($chaves as $key => $value) {
         # realiza o implode nas chaves do array
-        $campos = implode(", ",$chaves);
+        $campos = implode(", ", $chaves);
     }
-    
-        $array_generico['campos'] = $campos;
-        $array_generico['valores'] = $valores;
-        return $array_generico;
-        
-        #Execução: REMOVER COMENTARIO E EXECUTAR FORA DA FUNCAO
-/*
+
+    $array_generico['campos'] = $campos;
+    $array_generico['valores'] = $valores;
+    return $array_generico;
+
+    #Execução: REMOVER COMENTARIO E EXECUTAR FORA DA FUNCAO
+    /*
     $dado = array("size" => "XL", "color" => "gold");
     $campos = array_generico($dado);
     echo $campos['campos'];
     $valores = array_generico($dado);
     echo $campos['valores'];
 */
-    
 }
 
+function Upload_Arquivo($arquivo, $pasta)
+{
 
+    if (isset($arquivo['tpm_name']) && !empty($arquivo['tpm_name'])) {
 
+        # Renomeia o arquivo e realiza o upload
+        $arquivo_novo = md5(time() . rand(0, 99)) . '.png';
+        move_uploaded_file($arquivo['tpm_name'], "$pasta/" . $arquivo_novo);
+    }
+}
