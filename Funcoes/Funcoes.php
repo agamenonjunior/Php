@@ -66,7 +66,15 @@ function array_generico($dados)
 }
 
 function Upload_Arquivo($arquivo, $pasta)
+/**
+ * Realiza o upload de um arquivo na pasta especificada na função
+ * 
+ * @param array $arquivo
+ * @param string $pasta
+ * @return void
+ */
 {
+
 
     if (isset($arquivo['tpm_name']) && !empty($arquivo['tpm_name'])) {
 
