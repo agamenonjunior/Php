@@ -12,6 +12,26 @@ class User{
     private $senha;
     private $nivel;
     private $status;
+    
+    
+    public function __construct($nome,$email,$senha,$nivel,$status) {
+     /**
+     * __construct
+     *
+     * @param  string $nome
+     * @param  string $email
+     * @param  string $senha
+     * @param  int $nivel
+     * @param  int $status
+     * @return void
+     */
+        
+        $this->nome   = $nome;
+        $this->email  = $email;
+        $this->senha  = $senha;
+        $this->nivel  = $nivel;
+        $this->status = $status;
+    }
 
     /**
      * Get the value of id
