@@ -16,11 +16,7 @@ if (isset($_POST['cadastrar'])) {
         $dados['data']      = date('Y-m-d H:i:s');
 
         $postar = new Crud();
-        $postar->Add_Post("blog",$dados);
-
-        echo '<pre>';
-        print_r($dados);
-        echo '</pre>';
+        $postar->Add_Post("blog",$dados);       
 
     }else{
         echo 'Preencha os campos corretamente';
