@@ -6,6 +6,18 @@ spl_autoload_register(function($class){
 
 if (isset($_POST['cadastrar'])) {
     
+    if (isset($_POST['titulo']) && !empty($_POST['titulo']) && isset($_POST['texto']) && !empty($_POST['texto']) ) {
+        #
+        $dados['titulo']    = htmlentities($_POST['titulo']); 
+        $dados['texto']     = htmlentities($_POST['texto']);
+        $dados['categoria'] = htmlentities($_POST['categoria']);
+        $dados['autor']     = htmlentities($_POST['autor']);
+        $dados['data']      = date("d-m-Y h:i:s");
+
+    }else{
+        echo 'Preencha os campos corretamente';
+    }
+    
 }
 
 
