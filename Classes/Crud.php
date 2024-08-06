@@ -48,6 +48,23 @@ class Crud
         }
     }
 
+    public function Add_Post($tabela, $dados)
+    /**
+     * Realiza Insert no Banco de dados
+     */
+    {
+        $dado = $this->array_generico($dados);
+        $pdo = $this->Conect();
+        
+            $sql = $pdo->prepare("INSERT INTO {$tabela} ({$dado['campos']}) VALUES ({$dado['valores']})");
+            if ($sql->execute()) {
+                echo "Dado Cadastrado com Sucesso !";
+            } else {
+                echo "Ops... Error ao realizar o Cadastrado !";
+            }
+       
+    }
+
     public function VerificaEmail($email)
     {
         /**
