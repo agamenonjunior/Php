@@ -9,7 +9,7 @@ if (isset($_POST['cadastrar'])) {
     if (isset($_POST['texto']) && !empty($_POST['texto'])) {
         #
         $dados['texto']        = htmlentities($_POST['texto']);
-        $dados['id_noticia']  = htmlentities($_POST['id_postagem']);
+        $dados['id_noticia']   = htmlentities($_POST['id_postagem']);
         $dados['autor']        = htmlentities($_POST['autor']);
         $dados['data']         = date('Y-m-d H:i:s');
 
