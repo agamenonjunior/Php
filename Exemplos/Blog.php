@@ -7,14 +7,14 @@ spl_autoload_register(function($class){
 if (isset($_POST['cadastrar'])) {
     
     if (isset($_POST['titulo']) && !empty($_POST['titulo']) && isset($_POST['texto']) && !empty($_POST['texto']) ) {
-        #
+        #REALIZA O TRATAMENTO DOS DADOS
         $dados['titulo']    = htmlentities($_POST['titulo']); 
         $dados['slug']      = str_replace(" ", "-", $dados['titulo']);
         $dados['texto']     = htmlentities($_POST['texto']);
         $dados['categoria'] = htmlentities($_POST['categoria']);
         $dados['autor']     = htmlentities($_POST['autor']);
         $dados['data']      = date('Y-m-d H:i:s');
-
+        #REALIZA O CADASTRO NO BANCO DE DADOS
         $postar = new Crud();
         $postar->Add_Post("blog",$dados);       
 

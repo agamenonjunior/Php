@@ -7,7 +7,7 @@ spl_autoload_register(function($class){
 if (isset($_POST['cadastrar'])) {
     
     if (isset($_POST['texto']) && !empty($_POST['texto'])) {
-        #
+        #REALIZA O TRATAMENTO DOS DADOS
         $dados['texto']        = htmlentities($_POST['texto']);
         $dados['id_noticia']   = htmlentities($_POST['id_postagem']);
         $dados['autor']        = htmlentities($_POST['autor']);
