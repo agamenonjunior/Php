@@ -12,7 +12,7 @@ if (isset($_POST['cadastrar'])) {
         $dados['id_noticia']   = htmlentities($_POST['id_postagem']);
         $dados['autor']        = htmlentities($_POST['autor']);
         $dados['data']         = date('Y-m-d H:i:s');
-
+        #REALIZA O CADASTRO NO BANCO DE DADOS
         $postar = new Crud();
         $postar->Add_Post("comentarios",$dados);       
 
