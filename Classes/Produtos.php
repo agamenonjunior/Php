@@ -5,15 +5,15 @@
  * @author Agamenon Junior 
  * 
  */
-class Produto
+class Produtos
 {
 
-    private $id;
-    private $Nome;
-    private $valor;
-    private $imagem;
-    private $quantidade;
-    private $categoria;
+    private int $id;
+    private string $Nome;
+    private int $valor;
+    private string $imagem;
+    private int $quantidade;
+    private int $categoria;
 
 
     /**
